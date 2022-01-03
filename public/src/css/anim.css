@@ -9,3 +9,10 @@ section{
 		opacity: 1;
 	}
 }
+
+@media screen and (max-width: 880px){
+	section .products{
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+	}
+}
