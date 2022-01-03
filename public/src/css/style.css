@@ -251,7 +251,7 @@ section h1{
 section .products{
 	padding: .3rem .6rem;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows:1fr 1fr;
 	margin: 0 auto;
 	column-gap: 10px;
