@@ -8,8 +8,16 @@
 	--bg-color: linear-gradient( #076a82, #076d79 , #076e82 ) ;
 }
 section p{
-	color: white;
-	/*text-shadow: 0 0 1px black;*/
+	color: black;
+	text-shadow: 0 0 1px black;
+}
+section h1{
+	text-align: center;
+	text-transform: capitalize;
+	padding: 20px 0px;
+	/*color: var(--main-color);*/
+	color: #f38126;
+	text-shadow :0 0 2px black;
 }
 html{
 	height: 100%;
@@ -32,9 +40,11 @@ body{
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	background: linear-gradient(#B5C8D0 ,#14908A,#b5c8d0);
+	/*background: linear-gradient(#B5C8D0 ,#14908A,#b5c8d0);*/
 	font-family: "Romon", sans-serif; 
-	/*background:whitesmoke;*/
+	background: url("/images/img/bg.jpg");
+	background-size: cover;
+	background-position: center;
 	/*font-family:  sans-serif;*/
 
 }
@@ -249,49 +259,42 @@ section .carousel .carousel-img h3{
 
 
 
-section  h1{
-	padding: 80px 20px;
-	
-}
-section h1{
-	text-align: center;
-	text-transform: capitalize;
-	padding: 20px 0px;
-	/*color: var(--main-color);*/
-	color:white;
-	text-shadow :0 0 2px black;
-}
+
+
 section .products{
 	padding: .3rem .6rem;
 /*	grid-template-columns: 1fr 1fr;
 	grid-template-rows:1fr 1fr;
 	margin: 0 auto;
 	column-gap: 10px;
-*/	row-gap: 20px;
+*/
+	/*row-gap: 20px;*/
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
+	/*align-items: center;*/
 	/*text-align: center;*/
 }
 section .products .product {
 		/*place-self: center;*/
-		width: 45vmin;
-		height: 65vmin;
-		margin: 0 .3rem;
+		width: 300px;
+		height: 400px;
+		margin: .6rem 1.6rem;
 		display:flex;
+
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
 		float: left;
-		padding: .3rem .4rem;
+		padding: .3rem;
 		transition: all .3s ease-in-out;
 		box-shadow:  0 0 2px 0px rgba(0,0,0,0.6);
+		background-color: black;
 		
 }
 section .products .product .product-img{
 	width: 100%;
-	height: 30%;
+	height: 150px;
 	/*object-fit: contain;*/
 	/*overflow: hidden;*/
 	/*background-color: inherit;*/
