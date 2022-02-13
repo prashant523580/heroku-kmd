@@ -40,7 +40,7 @@ function slideShows(){
  }
 
 let prevscroll = window.scrollY;
-function scrollFunc(){
+function scrollFunc(e){
 	let currentscroll = window.scrollY;
 	let nav = document.getElementsByTagName("nav")[0];
 	if(prevscroll < currentscroll){
@@ -53,12 +53,14 @@ function scrollFunc(){
 
 	// console.log({prevscroll,currentscroll})
 	prevscroll = currentscroll
-	// console.log({prevscroll,currentscroll})
+
+	console.log(e)
 }
  window.addEventListener("scroll", scrollFunc);
-(window.addEventListener("load", () => {
 	if("serviceWorker" in navigator){
-		navigator.serviceWorker.register("/sw.js");
+		window.addEventListener("load", () => {
+			navigator.serviceWorker.register("/serviceWorker.js");
+			
+		})
 	}
-}))();
 

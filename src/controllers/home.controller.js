@@ -276,7 +276,7 @@ const products = [
 		"countryOfOrigin" : "Nepal"
 	}
 ];
-console.log(products)
+
 exports.homeController = (req,res) => {
 		res.render("index.hbs")
 }
@@ -294,6 +294,6 @@ exports.productController = (req,res) => {
 			})
 		
 	}catch(err){
-		console.log(err)
+			res.status(400).json({error : err})
 	}
 }
