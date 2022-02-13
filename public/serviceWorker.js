@@ -100,7 +100,7 @@
 
 const CACHE_NAME = 'offline';
 const OFFLINE_URL = ['offline.html',"index.hbs","404_page.hbs","about.hbs","content.hbs",
-"css/404page.css","css/anim.css","css/style.css"];
+"404page.css","anim.css","style.css"];
 
 //install 
 
@@ -129,7 +129,7 @@ self.addEventListener("install", (e) => {
 
   cacheLists.push(OFFLINE_URL);
   e.waitUntil(
-      caches.key()
+      caches.keys()
       .then((cacheNames) => Promise.all(
           cacheNames.map((cache) => {
             if(!cacheLists.includes(cache)){

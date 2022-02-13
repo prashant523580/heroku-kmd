@@ -35,10 +35,10 @@
 				],
 	"purpose": "any maskable",
 	"start_url": "/",
-	"background_color": "#ed12c8",
+	"background_color": "#000",
 	"display": "standalone",
 	"scope" : "/",
-	"theme_color": "#223111",
+	"theme_color": "#fff",
 	"shortcuts": [
     {
       "name": "How's weather today?",

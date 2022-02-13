@@ -4,6 +4,7 @@ let pause = false;
 let slideIndex = 0;
 let carouselMain = document.getElementById("carousel");
 let carousel = document.getElementsByClassName("carousel-img");
+let scrollTopBtn = document.getElementById("scrollTop");
 
 slideShows();
 
@@ -54,13 +55,30 @@ function scrollFunc(e){
 	// console.log({prevscroll,currentscroll})
 	prevscroll = currentscroll
 
-	console.log(e)
 }
- window.addEventListener("scroll", scrollFunc);
+ // window.addEventListener("scroll", scrollFunc);
+window.onscroll = function (){
+	scrollFunc()
+	scrollBtnFunc()
+}
+
 	if("serviceWorker" in navigator){
 		window.addEventListener("load", () => {
 			navigator.serviceWorker.register("/serviceWorker.js");
 			
 		})
 	}
+function scrollBtnFunc () {
+	let winScroll = window.scrollY;
+		if(winScroll > 200){
+			scrollTopBtn.style.opacity = "1";
+		}else{
+			scrollTopBtn.style.opacity = "0";
+		}
+}
 
+
+scrollTopBtn.addEventListener("click",() => {
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+})
