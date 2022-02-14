@@ -4,11 +4,11 @@
 <div class="product-page-container"> 
 <h1> Products </h1>
 
-	<div class="product-container">
+	<div class="products-container">
 		<div class="header">
 
 		</div>
-		<div class="products">
+		<div class="products-c">
 			{{#each products}}
 			<div class="product">
 				<div class="product-img">
@@ -21,12 +21,31 @@
 				<div> model : {{this.model}} </div>
 			</div>
 			<div class="img-desc">
+				{{this.name}}
+				<div> Brand : {{this.brand}}</div>
+				<div> manufacturer : {{this.manufacturer}} </div>
+				<div> model : {{this.model}} </div>
+		
 				<p> Medicine is the field of health and healing. It includes nurses, doctors, and various specialists. It covers diagnosis, treatment, and prevention of disease.....</p>
-			</div>
+			</div> 
 			</div>
 				{{/each}}
 		</div>
 	</div>
 	</div>
 </section>
+<script>
+	let api = "http://localhost:3000";
+
+	async function getProduct(){
+			let res = await fetch(`${api}/getProducts`,{
+				methods : "get",
+				headers:{
+					"content-type":"applcation/json"
+				}
+			});
+			console.log(res);
+	}
+	getProduct();
+</script>
 {{>footer}}

@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const {homeController,aboutController,contactController,productController} = require("../controllers/home.controller.js");
+const {getProducts,homeController,aboutController,contactController,productController} = require("../controllers/home.controller.js");
 router.get('/', homeController);
 router.get('/about', aboutController);
 router.get('/contact', contactController);
 router.get('/products',productController);
+router.get('/getPtoducts',getProducts);
 router.get("*",(req,res) => {
 	// console.log(req.params[0]);
 	let params = req.params[0];

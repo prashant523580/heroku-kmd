@@ -292,6 +292,17 @@ exports.productController = (req,res) => {
 	res.render("product.hbs",{
 		products
 			})
+	
+		
+	}catch(err){
+			res.status(400).json({error : err})
+	}
+}
+exports.getProducts = (req,res) => {
+	try{
+
+
+	res.status(200).json({products})
 		
 	}catch(err){
 			res.status(400).json({error : err})
