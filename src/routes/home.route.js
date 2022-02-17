@@ -5,7 +5,7 @@ router.get('/', homeController);
 router.get('/about', aboutController);
 router.get('/contact', contactController);
 router.get('/products',productController);
-router.get('/getPtoducts',getProducts);
+router.get('/getProducts',getProducts);
 router.get("*",(req,res) => {
 	// console.log(req.params[0]);
 	let params = req.params[0];

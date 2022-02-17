@@ -15,11 +15,22 @@ const templatePath = path.join(__dirname,"/templates/views");
 const partialsPath = path.join(__dirname,"/templates/partials");
 
 app.use((req,res,next) => {
-	res.header("Allow-Controll-Allow-Origin", "*");
-	res.header("Allow-Controll-Allow-Methods","GET POST DELETE,PATCH,PUT");
-	res.header("Allow-Controll-Allow-headers","Accept, Authorization ,Origin,Content-Type",'X-Requested-With')
+	res.header("Access-Controll-Allow-Origin", "*");
+	res.header("Access-Controll-Allow-Methods","GET POST DELETE,PATCH,PUT");
+	res.header("Access-Controll-Allow-headers","Accept, Authorization ,Origin,Content-Type",'X-Requested-With')
 	next();
-})
+});
+
+var paginate = require('handlebars-paginate');
+ 
+hbs.registerHelper('paginate', paginate);
+ 
+/* ... */
+ 
+// var html = template({pagination: {
+//   page: 3,
+//   pageCount: 10
+// }});
 app.set("views", templatePath);
 app.set("hbs", "view engine");
 hbs.registerPartials(partialsPath);

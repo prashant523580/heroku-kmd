@@ -301,7 +301,7 @@ exports.productController = (req,res) => {
 exports.getProducts = (req,res) => {
 	try{
 
-
+		console.log(req.params)
 	res.status(200).json({products})
 		
 	}catch(err){

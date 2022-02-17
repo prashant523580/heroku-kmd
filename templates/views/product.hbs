@@ -32,6 +32,7 @@
 				{{/each}}
 		</div>
 	</div>
+
 	</div>
 </section>
 <script>
@@ -43,8 +44,10 @@
 				headers:{
 					"content-type":"applcation/json"
 				}
-			});
-			console.log(res);
+			}).then((res) => {
+				console.log(res);
+			})
+			
 	}
 	getProduct();
 </script>
