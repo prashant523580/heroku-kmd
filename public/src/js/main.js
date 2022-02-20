@@ -19,26 +19,26 @@ function updateIndex(currentIndex){
 }
 // carouselMain.addEventListener("mouseenter",() => pause = true);
 // carouselMain.addEventListener("mouseleave",() => pause = false);
-prevBtn.addEventListener("click",() =>{
-	updateIndex(slideIndex - 1)
-});
+// prevBtn.addEventListener("click",() =>{
+// 	updateIndex(slideIndex - 1)
+// });
 
-nextBtn.addEventListener("click",() => {
-		updateIndex(slideIndex +1 );
-});
+// nextBtn.addEventListener("click",() => {
+// 		updateIndex(slideIndex +1 );
+// });
 
-function slideShows(){
+// function slideShows(){
 
-	for (var i = 0; i < carousel.length; i++){
-		carousel[i].style.opacity = "0";				
-	 }
+// 	for (var i = 0; i < carousel.length; i++){
+// 		carousel[i].style.opacity = "0";				
+// 	 }
 	
- 	slideIndex++;
- 		carousel[slideIndex].style.opacity = "1";
- 		setTimeout(() => {
- 			slideIndex++
- 		},2000);
- }
+//  	slideIndex++;
+//  		carousel[slideIndex].style.opacity = "1";
+//  		setTimeout(() => {
+//  			slideIndex++
+//  		},2000);
+//  }
 
 let prevscroll = window.scrollY;
 function scrollFunc(e){

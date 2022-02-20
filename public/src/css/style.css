@@ -615,10 +615,10 @@ section .product-page-container  .products-c .product {
 		box-shadow: 0 0 0 1px gray;
 		position: relative;
 		overflow: hidden;
-		border-radius: 20px;
+		border-radius: 4px;
 }
 section .product-page-container  .products-c .product:hover{
-	box-shadow: 0 0 100px 1px black;
+	box-shadow: 0 0 30px 1px rgba(0,0,0,0.4);
 }
 section .product-page-container  .products-c .product .product-body {
 		font-size: 2.7vmin;
@@ -680,7 +680,7 @@ section .about{
 }
 
 
-.scrollTop{
+#scrollTop{
 	position: fixed;
 	z-index: 9999999999999999;
 	background:white;
@@ -697,7 +697,7 @@ section .about{
 	transform: rotate(-45deg);
 	opacity: 0;
 }
-.scrollTop:active{
+#scrollTop:active{
 	transform: translatey(4px);
 
 }
