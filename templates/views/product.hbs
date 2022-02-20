@@ -12,7 +12,7 @@
 			{{#each products}}
 			<div class="product">
 				<div class="product-img">
-					<img src="/images/products/blood_bank.jpg">
+					<img src="/images/products/blood_bank.jpg" alt="product-name">
 				</div>
 			<div class="product-body">
 				{{this.name}}
@@ -44,9 +44,8 @@
 				headers:{
 					"content-type":"applcation/json"
 				}
-			}).then((res) => {
-				console.log(res);
 			})
+			console.log(res.data)
 			
 	}
 	getProduct();
