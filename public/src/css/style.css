@@ -695,6 +695,7 @@ section .about{
 	cursor: pointer;
 	color: var(--main-color);
 	transform: rotate(-45deg);
+	opacity: 0;
 }
 .scrollTop:active{
 	transform: translatey(4px);

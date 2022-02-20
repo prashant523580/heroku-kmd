@@ -4,9 +4,9 @@ let pause = false;
 let slideIndex = 0;
 let carouselMain = document.getElementById("carousel");
 let carousel = document.getElementsByClassName("carousel-img");
-let scrollTopBtn = document.getElementById("scrollTop");
 
-slideShows();
+
+// slideShows();
 
 function updateIndex(currentIndex){
 	if(currentIndex < 0){
@@ -18,7 +18,7 @@ function updateIndex(currentIndex){
 	return  slideIndex =currentIndex;
 }
 // carouselMain.addEventListener("mouseenter",() => pause = true);
-carouselMain.addEventListener("mouseleave",() => pause = false);
+// carouselMain.addEventListener("mouseleave",() => pause = false);
 prevBtn.addEventListener("click",() =>{
 	updateIndex(slideIndex - 1)
 });
@@ -61,13 +61,14 @@ window.onscroll = function (){
 	scrollFunc()
 	scrollBtnFunc()
 }
-
-	if("serviceWorker" in navigator){
+let scrollTopBtn = document.getElementById("scrollTop");
+			if("serviceWorker" in navigator){
 		window.addEventListener("load", () => {
-			navigator.serviceWorker.register("/serviceWorker.js");
+			navigator.serviceWorker.register("../serviceWorker.js");
 			
 		})
 	}
+
 function scrollBtnFunc () {
 	let winScroll = window.scrollY;
 		if(winScroll > 200){
