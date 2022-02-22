@@ -158,7 +158,7 @@ nav .nav-links a , .dropdown .drop-btn {
 	border-top-right-radius: 50%;
 	border-bottom-left-radius: 50%;
 
-	font-size: 2.9vmin;
+	font-size: 3vmin;
 }
 nav .nav-links .dropdown .drop-btn{
 	cursor: pointer;
@@ -213,16 +213,66 @@ nav .nav-links .dropdown:hover{
 	/*background-color: rgba(0,0,0,0.4);*/
 	color: white;
 }
+
 section .carousel {
+
+
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
 	height: 100vh;
 	z-index: 1;
 
+	overflow: hidden;
+
 }
+section > .parallax {
+	position: relative;
+	background: url("../../images/02.jpg");
+	transform: scale(.99) translate(1px);
+	background-attachment: fixed;
+		background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 40vh;
+	/*overflow-x: hidden;*/
+	/*filter: blur(.21px);*/
+}
+section:nth-child(4) .parallax{
+	position:relative;
+background: url("../../images/03.jpg");
+	transform: scale(.99) translate(1px);
+	background-attachment: fixed;
+		background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 40vh;
+}
+section > .parallax > div{
+	padding: 10px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+section > .parallax > div h1{
+	text-transform: capitalize;
+	color: white;
+
+	font-size: 4.5vmin;}
 
 
+section > .parallax > div p{
+	font-size: 2.5vmin;
+	width: 35vmin;
+	/*height: 200px;*/
+	text-decoration: none;
+	margin: .2rem auto;
+	background: white;
+	border-radius: .4rem;
+	color: var(--main-color);
+	padding: .3rem;
+}
 section:not(#home){
 	/*width:100%;*/
 	padding: 10px;
@@ -235,12 +285,14 @@ section .carousel:hover #prev
 section .carousel #next,
 section .carousel #prev{
 	position: absolute;
-	width: 10vmin;
+	/*width: 15vmin;*/
 	background: rgba(0,0,0,0.2);
 	z-index: 1;
 	opacity: 0;
-	height: 100%;
+	top: 50%;
+	/*height: 100%;*/
 	cursor: pointer;
+
 	outline: 0;
 	border: 0;
 	overflow: hidden;
@@ -254,7 +306,7 @@ section .carousel #prev{
 	left: 0;
 }
 section .carousel .carousel-img{
-	position : absolute;
+	/*position : absolute;*/
 	width : 100%;
 	height: 100%;	
 
@@ -263,6 +315,11 @@ section .carousel .carousel-img img{
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 
 section .carousel .carousel-img h3{
@@ -396,7 +453,7 @@ section .product-gallery .img-desc{
 	/*box-shadow: 0 0 0 1px gray;*/
 
 }section .product-gallery .img-desc p{
-	font-size: 2.8vmin;
+	font-size: 3.3vmin;
 color: black;
 }
 section .product-gallery .img-desc:hover{
@@ -778,4 +835,9 @@ grid-template-rows:  1fr 1fr;
 		}to{
 				transform: translateX(0);
 		}
+}
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
 }
