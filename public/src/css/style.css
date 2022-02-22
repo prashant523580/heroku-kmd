@@ -263,9 +263,10 @@ section > .parallax > div h1{
 
 
 section > .parallax > div p{
-	font-size: 2.5vmin;
-	width: 35vmin;
+	font-size: 3vmin;
+	width: 45vmin;
 	/*height: 200px;*/
+
 	text-decoration: none;
 	margin: .2rem auto;
 	background: white;
