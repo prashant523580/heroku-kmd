@@ -4,8 +4,8 @@ let pause = false;
 let slideIndex = 0;
 let carouselMain = document.getElementById("carousel");
 let carousel = document.getElementsByClassName("carousel-img");
-
-
+let products = document.getElementsByClassName("products");
+let gallery = document.getElementsByClassName("product-gallery");
 // slideShows();
 
 function updateIndex(currentIndex){
@@ -61,3 +61,49 @@ scrollTopBtn.addEventListener("click",() => {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 })
+
+
+
+// product view Into Scroll animate
+function isElementIntoView(ele){
+	let rect = ele.getBoundingClientRect();
+	// console.log(rect)
+	return rect.bottom >= 0 && rect.right >= 0 
+		&& rect.bottom < (window.innerHeight || document.documentElement.clientHeight)
+		&& rect.right < (window.innerWidth || document.documentElement.clientWidth) 
+}
+function cb () {
+
+	if(products[0].children.length > 0){
+		for(let product = 0; product < products[0].children.length; product++){
+			let element = products[0].children[product];
+			if(isElementIntoView(element)){
+				if(product%2 == 0){
+					element.classList.add("slide-right");
+				}else{
+					element.classList.add("slide-bottom");
+				}
+				// element.style.display = "block";
+			}else{
+
+				if(product%2 == 0){
+					element.classList.remove("slide-right");
+				}else{
+					element.classList.remove("slide-bottom");
+				}
+			}
+		}
+	}else {
+		return
+	}
+	if(gallery){
+		for(let product of gallery){
+			if(isElementIntoView(product)){
+				product.classList.add("pop-up");
+			}else{
+				product.classList.remove("pop-up");
+			}
+		}
+	}
+}
+window.addEventListener("scroll", cb);

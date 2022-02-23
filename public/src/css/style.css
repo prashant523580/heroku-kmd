@@ -8,6 +8,86 @@
 	--main-color:  #076a92;
 	--bg-color: linear-gradient( #076a82, #076d79 , #076e82 ) ;
 }
+
+
+/*=============================================================animation========================================*/
+.slide-left{
+	animation: slideLeft 1.5s linear;
+}
+.slide-right{
+	animation: slideRight 1.5s linear;
+}
+.slide-top{
+	animation: slideTop 1.5s linear;
+}
+.slide-bottom{
+	animation: slideBottom 1.5s linear;
+}
+.fade{
+	animation: fade 1.2s ease ;
+}
+
+.pop-up{
+	animation: popUp 1.5s linear;
+}
+
+ @keyframes popUp{
+	0%{
+		transform:scale(0);
+		opacity: .3;
+	}50%{
+		transform:scale(1.1);
+		opacity:0;
+	}100%{
+		opacity: 1
+		transform: scale(1);
+	}
+}
+@keyframes slideTop{
+	from{
+			transform: translateY(-400px);
+		}to{
+			transform: translateY(0);
+		}
+}
+@keyframes slideBottom{
+	from{
+			transform: translateY(400px);
+		}to{
+			transform: translateY(0);
+		}
+}
+
+@keyframes slideRight{
+	from{
+		transform: translateX(1000px);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes slideLeft{
+	form{
+		transform: translateX(-1000px);
+		opacity: 0;
+	}to{
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+@keyframes fade{
+	form{
+
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	
+	}
+}
+/*==========================================================animation end============================================*/
 section p{
 
 	color: #fff;
@@ -60,6 +140,7 @@ body{
 	/*background: url("/images/img/bg.jpg");*/
 	background-size: cover;
 	background-position: center;
+	overflow-x: hidden;
 	/*font-family:  sans-serif;*/
 
 }
@@ -240,10 +321,10 @@ section > .parallax {
 }
 section:nth-child(4) .parallax{
 	position:relative;
-background: url("../../images/03.jpg");
+	background: url("../../images/03.jpg");
 	transform: scale(.99) translate(1px);
 	background-attachment: fixed;
-		background-position: center;
+	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 60vh;
@@ -382,7 +463,7 @@ section .products .product .img-desc {
 }
 section .products .product .img-desc p{ 
 	color: #FFF;
-	font-size: 2.7vmin;
+	font-size: 2.9vmin;
 }
 section .products .product .product-img img{
 	width: 100%;
@@ -455,7 +536,7 @@ section .product-gallery .img-desc{
 
 }section .product-gallery .img-desc p{
 	font-size: 3.3vmin;
-color: black;
+	color: black;
 }
 section .product-gallery .img-desc:hover{
 
@@ -576,7 +657,7 @@ footer .contact-info a{
 
 button{
 	position: relative;
-	padding: .8vmin 1.2vmin;
+	padding: 1.2vmin 1vmin;
 	background: white;
 	z-index: 1;
 	/*height: 100%;*/
@@ -589,79 +670,21 @@ button{
 	border-radius: .4rem;
 }
 
-.slide-left{
-	animation: slideLeft 1.2s ease ;
-}
-.slide-right{
-	animation: slideRight 1.2s ease ;
-}
-
-.fade{
-	animation: fade 1.2s ease ;
-}
-
-span.ripple {
-  position: absolute; /* The absolute position we mentioned earlier */
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple .5s linear;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-/* @keyframes ripple{
-	from{
-		transform:scale(0);
-	}
-	to{
-		transform:scale(2);
-		opacity:0;
-	}
-}
-*/
-
-@keyframes slideRight{
-	form{
-		left : -5000px;
-	}to{
-		left: 0;
-	}
-}
-@keyframes slideLeft{
-	form{
-		left : -5000px;
-	}to{
-		left: 0;
-	}
-}
-@keyframes fade{
-	form{
-
-		opacity: 0;
-	}to{
-		opacity: 1;
-	
-	}
-}
 
 /*=======================================================product page==========================================================*/
 .product-page-container{
 }
 section .product-page-container  .products-c{
-width: 100%;
-display: grid;/*
-grid-template-columns: auto auto auto auto auto;
-grid-template-rows: auto auto auto auto auto ;*/
-grid-template-columns: 1fr 1fr 1fr 1fr  ;
-grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
-/*justify-content: center;*/
-align-items: center;
-column-gap: 10px;
-row-gap:10px;  
+	width: 100%;
+	display: grid;/*
+	grid-template-columns: auto auto auto auto auto;
+	grid-template-rows: auto auto auto auto auto ;*/
+	grid-template-columns: 1fr 1fr 1fr 1fr  ;
+	grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
+	/*justify-content: center;*/
+	align-items: center;
+	column-gap: 10px;
+	row-gap:10px;  
 }
 section .product-page-container  .products-c .product {
 		/*min-width: 150px;
@@ -757,10 +780,11 @@ section .about{
 	transform: rotate(-45deg);
 	opacity: 0;
 }
+
 #scrollTop:active{
 	transform: translatey(4px);
-
 }
+
 .col{
 	margin: 0 .3rem;
 	width: 50%;
@@ -768,79 +792,51 @@ section .about{
 	height: 100%;
 }
 
-@media screen and (max-width:650px){
-section .product-gallery{
-	flex-direction: column;
-}
-	section .product-gallery .product-img{
-	height: 150px;
-}section .product-gallery .img-desc{
-	
-}
-section .product-page-container  .products-c{
 
-grid-template-columns: 1fr 1fr  ;
-grid-template-rows:  1fr 1fr ;
 
-}
-}
-@media screen and (max-width:1150px){
-section .product-gallery{
-	flex-direction: column;
-}
-	section .product-gallery .product-img{
-	height: 250px;
-}section .product-gallery .img-desc{
-	
-}
-section .product-page-container  .products-c{
+section .cover-container{
 
-grid-template-columns: 1fr 1fr  1fr;
-grid-template-rows:  1fr 1fr 1fr;
-
+	position: relative;
 }
-}
-@media screen and (max-width:1050px){
-section .product-gallery{
-	flex-direction: column;
-}
-	section .product-gallery .product-img{
-	height: 250px;
-}section .product-gallery .img-desc{
+section .cover-container .cover-page{
+	/*margin-top: 2.5em;*/
 	width: 100%;
+	height: 50vh;
+	background-color: rgba(0,0,0,0.5);
+	background: url(../../images/01.jpg) fixed center /cover;
+	filter: blur(3px);
 }
-section .product-page-container  .products-c{
+.arrow-right{
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	margin: 0 .2em;
+	transform: rotate(-45deg);
+}
+section .cover-container .breed{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	/*width: 100%;*/
+	/*height: 100%;*/
+	background-color: rgba(0,0,0,0.3);
+	color: white;
+	font-size: 6vmin;
+	text-transform: capitalize;
+}
+section .cover-container .breed a{
+	text-decoration: none;
+	color: white;
+	transition: all .3s linear;
+}
+section .cover-container .breed a:hover{
+	text-decoration: underline;
+	transform: scale(.9);
+}
 
-grid-template-columns: 1fr 1fr ;
-grid-template-rows:  1fr 1fr;
-
-}
-}
-
-.slide-left{
-	animation: slideLeft 1s linear;
-}
-
-.slide-right{
-	animation: slideRight 1s linear;
-}
-
-@keyframes slideLeft{
-	from{
-		transform: translateX(-100%);
-		}to{
-				transform: translateX(0);
-		}
-}
-@keyframes slideRight{
-	from{
-		transform: translateX(100%);
-		}to{
-				transform: translateX(0);
-		}
-}
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}
