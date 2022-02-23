@@ -12,23 +12,23 @@
 
 /*=============================================================animation========================================*/
 .slide-left{
-	animation: slideLeft 1.5s linear;
+	animation: slideLeft .5s linear;
 }
 .slide-right{
-	animation: slideRight 1.5s linear;
+	animation: slideRight .5s linear;
 }
 .slide-top{
-	animation: slideTop 1.5s linear;
+	animation: slideTop .5s linear;
 }
 .slide-bottom{
 	animation: slideBottom 1.5s linear;
 }
 .fade{
-	animation: fade 1.2s ease ;
+	animation: fade .2s ease ;
 }
 
 .pop-up{
-	animation: popUp 1.5s linear;
+	animation: popUp .5s linear;
 }
 
  @keyframes popUp{

@@ -68,7 +68,7 @@ scrollTopBtn.addEventListener("click",() => {
 function isElementIntoView(ele){
 	let rect = ele.getBoundingClientRect();
 	// console.log(rect)
-	return rect.bottom >= 0 && rect.right >= 0 
+	return rect.bottom > 0 && rect.right > 0 
 		&& rect.bottom < (window.innerHeight || document.documentElement.clientHeight)
 		&& rect.right < (window.innerWidth || document.documentElement.clientWidth) 
 }
