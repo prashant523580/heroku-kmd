@@ -15,9 +15,9 @@ const templatePath = path.join(__dirname,"/templates/views");
 const partialsPath = path.join(__dirname,"/templates/partials");
 
 app.use((req,res,next) => {
-	res.header("Access-Controll-Allow-Origin", "*");
-	res.header("Access-Controll-Allow-Methods","GET POST DELETE,PATCH,PUT");
-	res.header("Access-Controll-Allow-headers","Accept, Authorization ,Origin,Content-Type",'X-Requested-With')
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Methods","GET POST DELETE,PATCH,PUT");
+	res.header("Access-Control-Allow-Headers","Accept, Authorization ,Origin,Content-Type",'X-Requested-With')
 	next();
 });
 

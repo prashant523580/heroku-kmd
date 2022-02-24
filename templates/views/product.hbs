@@ -10,53 +10,30 @@
 </section>
 <section>
 <div class="product-page-container"> 
+
 <h1> Products </h1>
-
 	<div class="products-container">
-		<div class="header">
+	
 
+		<div class="products-c" id="product-list">
+			
 		</div>
-		<div class="products-c">
-			{{#each products}}
-			<div class="product">
-				<div class="product-img">
-					<img src="/images/products/blood_bank.jpg" alt="product-name">
+				<div class="paginate">
+
+					<a href="javascript:prevPage()" id="prevBtn"> Prev </a>
+					<div id="paginate-no" class="paginate-no"> </div>
+					<a href="javascript:nextPage()" id="nextBtn"> next </a>
+					<div> pages: <span id="page"> </span> </div>
+					<select onchange="itemOnPage()">
+						<option value="20">10</option>
+						<option value="20">20</option>
+					</select>
 				</div>
-			<div class="product-body">
-				{{this.name}}
-				<div> Brand : {{this.brand}}</div>
-				<div> manufacturer : {{this.manufacturer}} </div>
-				<div> model : {{this.model}} </div>
-			</div>
-			<div class="img-desc">
-				{{this.name}}
-				<div> Brand : {{this.brand}}</div>
-				<div> manufacturer : {{this.manufacturer}} </div>
-				<div> model : {{this.model}} </div>
-		
-				<p> Medicine is the field of health and healing. It includes nurses, doctors, and various specialists. It covers diagnosis, treatment, and prevention of disease.....</p>
-			</div> 
-			</div>
-				{{/each}}
-		</div>
 	</div>
 
 	</div>
 </section>
 <script>
-	let api = "http://localhost:3000";
-
-	async function getProduct(){
-			let res = await fetch(`${api}/getProducts`,{
-				methods : "get",
-				headers:{
-					"content-type":"applcation/json"
-				}
-			})
-			console.log(res.data)
-			
-	}
-
 	document.title = "Medical Website - products"
 
 </script>

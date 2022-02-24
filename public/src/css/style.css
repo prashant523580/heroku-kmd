@@ -6,7 +6,8 @@
 }
 :root{
 	--main-color:  #076a92;
-	--bg-color: linear-gradient( #076a82, #076d79 , #076e82 ) ;
+	--bg-color: linear-gradient( #076a82, #076d79 , #076e82 );
+	--dark : #888;
 }
 
 
@@ -729,7 +730,6 @@ section .product-page-container .products-c .product .img-desc {
 	/*background-color: var(--main-color);*/
 	background-color: white;
 	color: black;
-
 	left: 0;
 	width: 100%;
 	height: 100%;
@@ -754,7 +754,40 @@ section .product-page-container .products-c .product .img-desc p{
 	color: var(--bg-color);
 	font-size: 3.1vmin;
 }
+section .product-page-container  .products-container .paginate{
+	width: 100%;
+	background: var(--bg-color);
+	display: flex;
+	justify-content: space-around;
+	padding: 8px 10px;
+	color: white;
+	margin : .2rem 0;
+	align-items: center;
+}
 
+section .product-page-container  .products-container .paginate .paginate-no{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+section .product-page-container  .products-container .paginate .paginate-no > div{
+	background-color: white;
+	color: var(--main-color);
+	padding:1vmin 2vmin;
+	text-align: center;
+	margin: 0 .3rem;
+}section .product-page-container  .products-container .paginate .paginate-no > div.active{
+	color: var(--dark);
+	background-color: orange;
+}
+section .product-page-container  .products-container .paginate a{
+	text-decoration: none;
+	color: var(--dark);
+	background-color: white;
+	padding: 1.3vmin 1.6vmin;
+	border-radius: .2rem;
+}
 section .about{
 	background: var(--bg-color);
 	width: 100%;
