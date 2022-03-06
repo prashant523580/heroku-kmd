@@ -78,9 +78,9 @@ scrollTopBtn.addEventListener("click",() => {
 function isElementIntoView(ele){
 	let rect = ele.getBoundingClientRect();
 	// console.log(rect)
-	return rect.bottom > 0 && rect.right > 0 
-		&& rect.bottom < (window.innerHeight || document.documentElement.clientHeight)
-		&& rect.right < (window.innerWidth || document.documentElement.clientWidth) 
+	return rect.bottom >= 0 && rect.right >= 0 
+		&& rect.top < (window.innerHeight || document.documentElement.clientHeight)
+		&& rect.left < (window.innerWidth || document.documentElement.clientWidth) 
 }
 function cb () {
 
@@ -106,7 +106,7 @@ function cb () {
 		}
 	}
 else {
-		return
+		return 
 	}
 	if(gallery){
 		for(let product of gallery){
@@ -119,7 +119,7 @@ else {
 	}
 }
 window.addEventListener("scroll", cb);
-
+window.addEventListener("load", cb);
 ////////////////////product list page/////////////////======================================
 function fetchProduct (){
 	// let res = await fetch('http://localhost:3000/getProducts',{
@@ -145,7 +145,7 @@ function fetchProduct (){
 			localStorage.setItem("products", this.responseText);
 		}
 	}
-	xhr.open('GET',"http://localhost:3000/getProducts", true);
+	xhr.open('GET',"https://kamla-medicine.herokuapp.com/getProducts", true);
 	xhr.send();
 }
 	fetchProduct();
@@ -201,15 +201,6 @@ function changePage(page){
 			</div>
 
 		`;
-	// 	tbody.innerHTML += `<tr>
-	// 							<td>${productsItems[i].name} </td>
-
-	// 							<td>${productsItems[i].manufacturer} </td>
-	// 							<td>${productsItems[i].brand} </td>
-
-	// 							<td>${productsItems[i].model} </td>
-	// 							<td>${productsItems[i].countryOfOrigin} </td>
-	// 						</tr>`
 	}
 	if(page == 1){
 		prevBtn.style.visibility = "hidden";

@@ -13,23 +13,23 @@
 
 /*=============================================================animation========================================*/
 .slide-left{
-	animation: slideLeft .5s linear;
+	animation: slideLeft 1s linear;
 }
 .slide-right{
-	animation: slideRight .5s linear;
+	animation: slideRight 1s linear;
 }
 .slide-top{
-	animation: slideTop .5s linear;
+	animation: slideTop 1s linear;
 }
 .slide-bottom{
-	animation: slideBottom 1.5s linear;
+	animation: slideBottom 1s linear;
 }
 .fade{
-	animation: fade .2s ease ;
+	animation: fade 1s ease ;
 }
 
 .pop-up{
-	animation: popUp .5s linear;
+	animation: popUp 1s linear;
 }
 
  @keyframes popUp{
@@ -37,8 +37,8 @@
 		transform:scale(0);
 		opacity: .3;
 	}50%{
-		transform:scale(1.1);
-		opacity:0;
+		transform:scale(.6);
+		opacity:1;
 	}100%{
 		opacity: 1
 		transform: scale(1);
@@ -47,31 +47,35 @@
 @keyframes slideTop{
 	from{
 			transform: translateY(-400px);
+			opacity: 0;
 		}to{
-			transform: translateY(0);
+			opacity: 1
+			transform: translate(0);
 		}
 }
 @keyframes slideBottom{
 	from{
+		opacity: 0;
 			transform: translateY(400px);
 		}to{
-			transform: translateY(0);
+			opacity: 1;
+			transform: translate(0);
 		}
 }
 
 @keyframes slideRight{
 	from{
-		transform: translateX(1000px);
+		transform: translateX(300px);
 		opacity: 0;
 	}
 	to{
-		transform: translateX(0);
+		transform: translate(0);
 		opacity: 1;
 	}
 }
 @keyframes slideLeft{
 	form{
-		transform: translateX(-1000px);
+		transform: translateX(-400px);
 		opacity: 0;
 	}to{
 		transform: translate(0);
@@ -423,18 +427,17 @@ section .products{
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-		overflow-x:hidden; 
+		overflow:hidden; 
 
 }
 section .products .product {
 		/*place-self: center;*/
-		max-width: 43.33%;
+		max-width: 40.33%;
 		/*max-height: ;*/
 		/*min-width: 40vmin;*/
 		/*min-height: 35vmin;*/
 		margin: .6rem .6rem;
 		display:flex;
-
 		/*justify-content: center;*/
 		flex-direction: column;
 		transition: all .3s ease-in-out;
