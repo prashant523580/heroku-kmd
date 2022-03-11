@@ -13,13 +13,13 @@
 
 /*=============================================================animation========================================*/
 .slide-left{
-	animation: slideLeft 1s linear;
+	animation: slideLeft .8s linear;
 }
 .slide-right{
-	animation: slideRight 1s linear;
+	animation: slideRight .8s linear;
 }
 .slide-top{
-	animation: slideTop 1s linear;
+	animation: slideTop 2s linear;
 }
 .slide-bottom{
 	animation: slideBottom 1s linear;
@@ -29,19 +29,19 @@
 }
 
 .pop-up{
-	animation: popUp 1s linear;
+	animation: popUp .8s linear;
 }
 
  @keyframes popUp{
 	0%{
-		transform:scale(0);
+		transform:scale(0) translateX(400px);
 		opacity: .3;
 	}50%{
-		transform:scale(.6);
-		opacity:1;
+		transform:scale(.6) translateX(-200px);
+		opacity:.5;
 	}100%{
 		opacity: 1
-		transform: scale(1);
+		transform: scale(1) translateX(0);
 	}
 }
 @keyframes slideTop{
@@ -65,20 +65,20 @@
 
 @keyframes slideRight{
 	from{
-		transform: translateX(300px);
+		transform: scale(0) translateX(400px);
 		opacity: 0;
 	}
 	to{
-		transform: translate(0);
+		transform: scale(1); translate(0);
 		opacity: 1;
 	}
 }
 @keyframes slideLeft{
 	form{
-		transform: translateX(-400px);
+		transform: scale(0) translateX(-400px);
 		opacity: 0;
 	}to{
-		transform: translate(0);
+		transform: scale(1); translate(0);
 		opacity: 1;
 	}
 }
@@ -315,7 +315,7 @@ section .carousel {
 section > .parallax {
 	position: relative;
 	background: url("../../images/02.jpg");
-	transform: scale(.99) translate(1px);
+	transform: scale(1) translate(1px);
 	background-attachment: fixed;
 		background-position: center;
 	background-size: cover;
@@ -327,7 +327,7 @@ section > .parallax {
 section:nth-child(4) .parallax{
 	position:relative;
 	background: url("../../images/03.jpg");
-	transform: scale(.99) translate(1px);
+	transform: scale(1) translate(1px);
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
@@ -344,20 +344,22 @@ section > .parallax > div{
 section > .parallax > div h1{
 	text-transform: capitalize;
 	color: white;
+	font-size: 5vmin;
+	}
 
-	font-size: 4.5vmin;}
 
 
 section > .parallax > div p{
-	font-size: 2.5vmin;
-	width: 65vmin;
+	font-size: 3.5vmin;
+	/*width: 65vmin;*/
 	/*height: 200px;*/
 	font-weight: normal;
 	text-decoration: none;
 	margin: .2rem auto;
 	background: white;
-	border-radius: .4rem;
-	color: var(--main-color);
+	border-radius: .1rem;
+	/*color: var(--main-color);*/
+	color: black;
 	padding: .3rem;
 }
 section:not(#home){
@@ -477,7 +479,7 @@ section .products .product .product-img img{
 	
 }
 section .product:hover{
-	box-shadow: 0 0px 50px 5px rgba(0,0,0,0.6);
+	box-shadow: 0 4px 20px 0 rgba(0,0,0,0.6);
 	
 	cursor: pointer;
 
@@ -661,7 +663,7 @@ footer .contact-info a{
 
 button{
 	position: relative;
-	padding: 1.2vmin 1vmin;
+	padding: 6px 8px;
 	background: white;
 	z-index: 1;
 	/*height: 100%;*/
@@ -671,7 +673,7 @@ button{
 	overflow: hidden;
 	text-align: center;
 	text-transform: capitalize;
-	border-radius: .4rem;
+	border-radius: .2rem;
 }
 
 
@@ -683,8 +685,8 @@ section .product-page-container  .products-c{
 	display: grid;/*
 	grid-template-columns: auto auto auto auto auto;
 	grid-template-rows: auto auto auto auto auto ;*/
-	grid-template-columns: 1fr 1fr 1fr 1fr  ;
-	grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr ;
+	grid-template-rows:  1fr 1fr 1fr 1fr ;
 	/*justify-content: center;*/
 	align-items: center;
 	column-gap: 10px;

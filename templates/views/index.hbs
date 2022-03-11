@@ -115,8 +115,75 @@
 			<div class="img-desc col">
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Medicine is the field of health and healing. It includes nurses, doctors, and various specialists. It covers diagnosis, treatment, and prevention of disease, medical research, and many other aspects of health. Medicine aims to promote and maintain health and wellbeing.</p>
 			</div>
-		</div>	
+		</div>
+
 	</section>
 
+<script>
 
+let products = document.querySelectorAll(".products .product");
+let gallery = document.getElementsByClassName("product-gallery");
+
+// product view Into Scroll animate
+function isElementIntoView(ele){
+	let rect = ele.getBoundingClientRect();
+	// console.log(rect)
+	return rect.bottom >= 0 && rect.right >= 0 
+		&& rect.top < (window.innerHeight || document.documentElement.clientHeight)
+		&& rect.left < (window.innerWidth || document.documentElement.clientWidth) 
+}
+function cb () {
+
+	if(products){
+		for(let product = 0; product < products.length; product++){
+	
+			let element = products[product]
+			
+
+				// console.log(isElementIntoView(element))
+			if(isElementIntoView(element)){
+				if(product%2 == 0){
+					element.classList.add("slide-right");
+				}else{
+					element.classList.add("pop-up");
+				}
+				// element.style.display = "block";
+			}else{
+				// return
+				// if(product%2 == 0){
+				// 	element.classList.remove("slide-right");
+				// }else{
+				// 	element.classList.remove("slide-bottom");
+				// }
+			}
+		}
+	}else {
+		// return 
+	}
+	if(gallery){
+		for(let product of gallery){
+
+			console.log(product)
+			if(isElementIntoView(product)){
+				if(product.length%2 ===0){
+					// console.log(product)
+					product.classList.add("pop-up")
+				}else{
+					product.classList.add('slide-right');
+				}
+			}else{
+					if(product.length%2 ===0){
+					// console.log(product)
+					product.classList.remove("pop-up")
+				}else{
+					product.classList.remove('slide-right');
+				}
+			}
+		}
+	}
+
+}
+window.addEventListener("scroll", cb);
+window.addEventListener("load", cb);
+</script>
 {{>footer}}
